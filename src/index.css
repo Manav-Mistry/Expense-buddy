@@ -1,0 +1,90 @@
+:root {
+    --nav_height : 57.7px;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arimo', sans-serif;
+}
+
+.card {
+    width: 50vw;
+    padding: 2rem;
+    color: rgb(40, 40, 43);
+    background-color: rgb(247, 247, 247);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-reverse {
+    background-color: #2e8a56;
+    color: white;
+}
+
+.card-between {
+    justify-content: space-between;
+}
+
+.card-around {
+    justify-content: space-around;
+}
+
+.introduction{
+    background-image: linear-gradient(135deg, #dce5e0 60%, hsl(146, 50%, 36%) 40%);
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    min-height: calc(100vh - var(--nav_height));
+}
+
+.introduction > .slogan {
+    width: 45vw;
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.slogan-secondary {
+    font-weight: 400;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+}
+
+/* Button */
+
+[type='button'] {
+   border-radius: 5px;
+   border: none;
+   padding: 1rem 2.5rem;
+   transition: 1s;
+
+}
+
+[type='button'].small {
+    font-size:small;
+}
+[type='button'].medium {
+    font-size:medium ;
+}
+[type='button'].large {
+    font-size:large ;
+}
+
+[type='button'].primary {
+    background-color: seagreen;
+    color: white;
+}
+[type='button'].secondary {
+    background-color: white;
+    color: seagreen;
+}
+
+/* navbar */
+.active {
+    border-bottom: 3.5px solid seagreen;
+    border-radius: 2px;
+    padding-bottom: 0.2rem;
+}
