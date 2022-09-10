@@ -1,5 +1,6 @@
 import PropTypes from "prop-types" 
 import React from 'react'
+import "../../style/card.css"
 
 function Card({children, reverse}) {
   return (

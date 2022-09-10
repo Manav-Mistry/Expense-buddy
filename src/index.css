@@ -1,5 +1,6 @@
 :root {
     --nav_height : 57.7px;
+    --main-color: seagreen;
 }
 
 *{
@@ -7,29 +8,6 @@
     margin: 0;
     padding: 0;
     font-family: 'Arimo', sans-serif;
-}
-
-.card {
-    width: 50vw;
-    padding: 2rem;
-    color: rgb(40, 40, 43);
-    background-color: rgb(247, 247, 247);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.card-reverse {
-    background-color: #2e8a56;
-    color: white;
-}
-
-.card-between {
-    justify-content: space-between;
-}
-
-.card-around {
-    justify-content: space-around;
 }
 
 .introduction{
@@ -55,36 +33,59 @@
 
 /* Button */
 
-[type='button'] {
+input[type] {
+    outline:none;
+
+}
+
+[type='button'], [type = 'submit'] {
    border-radius: 5px;
    border: none;
-   padding: 1rem 2.5rem;
    transition: 1s;
 
 }
 
-[type='button'].small {
+[type='button'].small, [type='submit'].small {
     font-size:small;
-}
-[type='button'].medium {
-    font-size:medium ;
-}
-[type='button'].large {
-    font-size:large ;
+    padding: 0.5rem 2.0rem;
 }
 
-[type='button'].primary {
+[type='button'].medium, [type='submit'].medium {
+    font-size:medium ;
+    padding: 1rem 2.5rem;
+}
+
+[type='button'].large, [type='submit'].large {
+    font-size:large ;
+    padding: 1rem 2.5rem;
+}
+
+[type='button'].primary, [type='submit'].primary {
     background-color: seagreen;
     color: white;
 }
-[type='button'].secondary {
+[type='button'].secondary, [type='submit'].secondary {
     background-color: white;
     color: seagreen;
 }
+button.texted, [type='submit'].texted {
+    background-color: transparent;
+    color: seagreen;
+}
+
+/* input type */
+
+[type='text'], [type='email'],[type='password'] {
+    padding: 0.3rem;
+    border: 1px solid lightgrey;
+    
+    display: block;
+}
 
 /* navbar */
-.active {
+/* .active {
     border-bottom: 3.5px solid seagreen;
     border-radius: 2px;
     padding-bottom: 0.2rem;
-}
+} */
+

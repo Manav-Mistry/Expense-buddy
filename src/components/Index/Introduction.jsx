@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../shared/Button";
 import Navbar from "../shared/Navbar";
+import { Link } from "react-router-dom";
 
 function Introduction() {
 
@@ -23,7 +24,9 @@ function Introduction() {
           <p className="slogan-secondary">
             Then Projectname is here for the solution
           </p>
-          <Button btnType="button" btnColorStyle="primary" btnSize="large"> Sign Up</Button>
+          <Link to="./form">
+            <Button btnType="button" btnColorStyle="primary" btnSize="large"> Sign Up</Button>
+          </Link>
         </div>
 
         <div className="intro-img">

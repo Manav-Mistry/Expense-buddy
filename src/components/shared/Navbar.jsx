@@ -25,7 +25,7 @@ function Navbar() {
               <ul className="navbar-nav">
                 <li className="nav-item">
                   <NavLink
-                    className="nav-link active"
+                    className="nav-link"
                     aria-current="page"
                     to="/"
                     activeclassname="active"

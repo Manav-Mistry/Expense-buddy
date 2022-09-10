@@ -1,29 +1,41 @@
 import React from 'react'
 import Card from './shared/Card'
-import { useState } from 'react'
-
+import { useContext, useState } from 'react'
+import userContext from '../context/userContext'
+import "../style/registerform.css"
+import Button from './shared/Button'
 
 function Form() {
-  const [uName, setUName] = useState();  
-
-  const handleUName = (e) => {
-    // setUName(e.target.value);
-    console.log(e.target.value);
-  }
+  const { nameRef, handleUserName } = useContext(userContext);
+  const { emailRef, handleEmail } = useContext(userContext);
+  const { passRef, handlePassword } = useContext(userContext);
 
   return (
-    <>
-      <form>
-        <div className='d-flex justify-content-center'>
-          <Card>
-            <div className='container input-group'>
-              <input onChange={(event) => handleUName(event)} type='text' name='name' className='form-control' />
-              <input className="btn btn-primary" type="submit" value="Submit" />
+    <div className='d-flex justify-content-center align-item-center'>
+      <Card>
+        <form className='register-form'>
+          <div className='d-flex justify-content-center'>
+            <div className='container'>
+              <input ref={nameRef} type='text' name='username'
+                placeholder='Name' />
+
+              <input ref={emailRef} type='email' name='useremail'
+                placeholder='Email'
+              />
+
+              <input ref={passRef} type='password' name='userpassword'
+                placeholder='Password' />
+
+              <div className='d-flex justify-content-between'>
+                <Button btnType="button" btnColorStyle="texted" btnSize="small" >Login</Button>
+
+                <input className="primary small" type="submit" value="Submit" onClick={(e) => handleUserName(e)} />
+              </div>
             </div>
-          </Card>
-        </div>
-      </form>
-    </>
+          </div>
+        </form>
+      </Card>
+    </div>
 
   )
 }

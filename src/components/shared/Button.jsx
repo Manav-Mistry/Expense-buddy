@@ -1,12 +1,18 @@
 import React from 'react'
 import PropTypes from "prop-types" 
+import Form from '../Form'
+import { Route, Router, Routes } from 'react-router-dom'
 
 function Button({children, btnType, btnColorStyle, btnSize}) {
-    const handleClick = () => {
-        console.log(btnType, btnColorStyle, btnSize);
-    }
+    // const handleClick = (onClick) => {
+    //     <Router>
+    //         <Routes>
+    //             <Route path={`./${onClick}`} element={<Form />}/>
+    //         </Routes>
+    //     </Router>
+    // }
   return (
-    <button onClick={handleClick} type={btnType} className = {`${btnColorStyle} ${btnSize}`}>
+    <button type={btnType} className = {`${btnColorStyle} ${btnSize}`}>
         {children}
     </button>
   )
@@ -15,7 +21,7 @@ function Button({children, btnType, btnColorStyle, btnSize}) {
 Button.defaultProps = {
     btnType: 'button',
     btnColorStyle: 'primary',
-    btnSize: 'medium'
+    btnSize: 'small'
 }
 
 Button.propTypes = {

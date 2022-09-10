@@ -1,11 +1,36 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useRef } from "react";
 
 const userContext = createContext();
 
 export const UserProvider = ({children}) => {
-    const [uName, setUName] = useState(); // put the value in the useState that you want to be context level
+    const [uName, setUName] = useState();
+    const nameRef = useRef();
 
-    return <userContext.Provider value = {{uName}}>
+    const [uEmail, setUEmail] = useState();
+    const emailRef = useRef();
+
+    const [uPassword, setUPassword] = useState();
+    const passRef = useRef(); 
+
+    const handleUserName = (e) => {
+        e.preventDefault();
+        setUName(nameRef.current.value);
+        console.log(nameRef.current.value);
+    }
+
+    const handleEmail = (e) => {
+
+    }
+
+    const handlePassword = (e) => {
+
+    }
+
+    return <userContext.Provider value = {{
+            uName, nameRef, handleUserName,
+            uEmail, emailRef, handleEmail,
+            uPassword, passRef, handlePassword
+        }}>
         {children}
     </userContext.Provider>
 }
